@@ -1,0 +1,30 @@
+setuptools
+# -e .
+
+# Core
+pandas
+numpy
+requests
+sqlalchemy
+psycopg2-binary
+PyYAML
+
+# Airflow (use only if you're running locally; pin versions to avoid conflicts)
+apache-airflow==2.9.1
+
+# Logging & Dev
+python-dotenv
+
+# Optional: For future modeling and EDA (if not already added)
+scikit-learn
+matplotlib
+seaborn
+plotly
+statsmodels
+prophet
+
+# for storing data in S3
+boto3
+
+# For Power BI SQL connector (ensure PostgreSQL driver is installed locally)
+# No need to install anything extra in code

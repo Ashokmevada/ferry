@@ -1,0 +1,4 @@
+/ferry/*
+/.env
+/logs/*
+/src/ferry_portfolio_pipeline/config/settings.py

@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: portfolio_pipeline
+Version: 0.1.0
+Summary: An end-to-end automated portfolio data analysis pipeline using Python, Airflow, SQL, and Power BI.
+Home-page: https://github.com/Ashokmevada/portfolio-data-pipeline
+Author: Ashokmevada
+Author-email: ashokmevada18@gmail.com
+Project-URL: Bug Tracker, https://github.com/Ashokmevada/portfolio-data-pipeline/issues
+Requires-Dist: setuptools
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: summary
