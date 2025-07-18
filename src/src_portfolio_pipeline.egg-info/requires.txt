@@ -1,0 +1,17 @@
+setuptools
+pandas
+numpy
+requests
+sqlalchemy
+psycopg2-binary
+PyYAML
+apache-airflow==2.9.1
+python-dotenv
+scikit-learn
+matplotlib
+seaborn
+plotly
+statsmodels
+prophet
+boto3
+dvc_s3

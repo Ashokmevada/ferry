@@ -22,7 +22,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 __version__ = "0.1.0"
 REPO_NAME = "portfolio-data-pipeline"
 AUTHOR_USER_NAME = "Ashokmevada"
-SRC_REPO = "portfolio_pipeline"
+SRC_REPO = "ferry_portfolio_pipeline"
 AUTHOR_EMAIL = "ashokmevada18@gmail.com"
 
 # Setup

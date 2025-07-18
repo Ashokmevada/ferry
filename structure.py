@@ -7,6 +7,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 project_name = "ferry_portfolio_pipeline"
 
 list_of_files = [
+    # Existing structure
     ".github/workflows/.gitkeep",
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/scripts/__init__.py",
@@ -25,13 +26,23 @@ list_of_files = [
     "config/config.yaml",
     "params.yaml",
     "schema.yaml",
-    "dags/ferry_portfolio_pipeline_dags.py",
     "notebooks/eda.ipynb",
     "Dockerfile",
     "requirements.txt",
     "setup.py",
     "README.md",
-    "test.py"
+    "test.py",
+
+    # ---------------------------
+    # Airflow-specific structure
+    # ---------------------------
+    "airflow/dags/__init__.py",
+    "airflow/dags/ferry_pipeline_dag.py",        # your main DAG
+    "airflow/plugins/__init__.py",               # for custom operators/hooks
+    "airflow/logs/.gitkeep",                     # Airflow logs directory
+    "airflow/config/airflow.cfg",                # airflow config (optional; can be generated)
+    "airflow/docker/.gitkeep",                   # if running Airflow via Docker Compose
+    "airflow/README.md",
 ]
 
 for filepath in list_of_files:
@@ -47,5 +58,3 @@ for filepath in list_of_files:
         logging.info(f"Creating empty file: {filepath}")
     else:
         logging.info(f"{filename} already exists")
-
-

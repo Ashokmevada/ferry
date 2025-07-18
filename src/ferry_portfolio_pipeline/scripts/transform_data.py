@@ -55,6 +55,10 @@ def transform_data(df: pd.DataFrame) -> pd.DataFrame:
     except Exception as e:
         logger.error(f"❌ Error during data transformation: {e}")
         raise CustomException(e)
+    
+def run_transformation():
+    main()
+    
 
 def main():
     bucket = CONFIG["s3"]["bucket"]

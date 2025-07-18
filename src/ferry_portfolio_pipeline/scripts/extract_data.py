@@ -68,6 +68,10 @@ def get_ckan_data(package_id: str) -> pd.DataFrame:
         logger.error(f"❌ Error fetching CKAN data: {e}")
         raise CustomException(e)
 
+def run_extraction():
+    main()
+
+
 
 def main():
     try:

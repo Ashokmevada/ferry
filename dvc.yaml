@@ -1,10 +1,5 @@
 stages:
-  extract_data:
-    cmd: python src\ferry_portfolio_pipeline\scripts\extract_data.py
-    deps:
-    - src\ferry_portfolio_pipeline\scripts\extract_data.py
-    outs:
-    - artifacts\ferry_raw.csv
+# I am using only transform_data stage because the extract_data stage output file needs to be tracked by dvc standalone. Beacuse in airflow dag dvc repro only run when there will be changes in the code. 
   transform_data:
     cmd: python src\ferry_portfolio_pipeline\scripts\transform_data.py
     deps:

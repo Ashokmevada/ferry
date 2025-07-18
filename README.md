@@ -85,3 +85,19 @@ For questions or feedback, please contact Ashok Mevada at ashokmevada18@gmail.co
 ---
 
 *This project aims to contribute to sustainable and efficient ferry operations at Toronto Island Park through data-driven forecasting and analytics.*
+
+📌 Why Install Airflow with Constraints?
+To ensure a stable and compatible setup, we install Apache Airflow using an officially maintained constraints file. This guarantees that all dependencies are locked to versions that are tested and supported with the selected Airflow version.
+
+
+AIRFLOW_VERSION=2.8.2
+PYTHON_VERSION="$(python --version | cut -d ' ' -f 2 | cut -d '.' -f 1-2)"
+CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+
+pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+✅ Benefits:
+Avoids version conflicts
+
+Ensures reliable DAG execution
+
+Reproducible and production-ready installation.

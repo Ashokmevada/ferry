@@ -1,0 +1,28 @@
+[2025-07-18T22:05:25.033+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-18T22:05:25.066+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ferry_portfolio_etl.transform_data scheduled__2025-07-18T22:00:00+00:00 [queued]>
+[2025-07-18T22:05:25.076+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ferry_portfolio_etl.transform_data scheduled__2025-07-18T22:00:00+00:00 [queued]>
+[2025-07-18T22:05:25.077+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-18T22:05:25.091+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform_data> on 2025-07-18 22:00:00+00:00
+[2025-07-18T22:05:25.106+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1260) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-18T22:05:25.108+0000] {standard_task_runner.py:63} INFO - Started process 1262 to run task
+[2025-07-18T22:05:25.106+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ferry_portfolio_etl', 'transform_data', 'scheduled__2025-07-18T22:00:00+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/ferry_pipeline_dag.py', '--cfg-path', '/tmp/tmpt_6p0ajc']
+[2025-07-18T22:05:25.109+0000] {standard_task_runner.py:91} INFO - Job 64: Subtask transform_data
+[2025-07-18T22:05:25.132+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-18T22:05:25.200+0000] {task_command.py:426} INFO - Running <TaskInstance: ferry_portfolio_etl.transform_data scheduled__2025-07-18T22:00:00+00:00 [running]> on host 8d200254fb37
+[2025-07-18T22:05:25.321+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ashok' AIRFLOW_CTX_DAG_ID='ferry_portfolio_etl' AIRFLOW_CTX_TASK_ID='transform_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-18T22:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-18T22:00:00+00:00'
+[2025-07-18T22:05:25.323+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-18T22:05:25.337+0000] {transform_data.py:22} INFO - ⬇️ Reading file from S3: s3://ashok-ferry-data-bucket/raw_data/raw.csv
+[2025-07-18T22:05:25.362+0000] {credentials.py:1147} INFO - Found credentials in environment variables.
+[2025-07-18T22:05:26.207+0000] {transform_data.py:27} INFO - ✅ Successfully loaded 249950 rows.
+[2025-07-18T22:05:26.211+0000] {transform_data.py:47} INFO - 🔄 Transforming data...
+[2025-07-18T22:05:48.767+0000] {transform_data.py:53} INFO - ✅ Data transformation complete.
+[2025-07-18T22:05:48.770+0000] {transform_data.py:11} INFO - 💾 Saving DataFrame locally at: artifacts/transformed_data.csv
+[2025-07-18T22:05:49.279+0000] {transform_data.py:14} INFO - ✅ Local save successful.
+[2025-07-18T22:05:49.280+0000] {transform_data.py:35} INFO - ⬆️ Uploading DataFrame to S3: s3://ashok-ferry-data-bucket/transformed_data/transformed.csv
+[2025-07-18T22:05:50.877+0000] {transform_data.py:40} INFO - ✅ Upload successful.
+[2025-07-18T22:05:50.924+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-18T22:05:50.925+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-18T22:05:50.947+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ferry_portfolio_etl, task_id=transform_data, run_id=scheduled__2025-07-18T22:00:00+00:00, execution_date=20250718T220000, start_date=20250718T220525, end_date=20250718T220550
+[2025-07-18T22:05:51.180+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-18T22:05:51.292+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-07-18T22:05:51.296+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

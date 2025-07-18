@@ -1,0 +1,24 @@
+[2025-07-18T20:15:01.924+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-18T20:15:01.962+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-18T20:10:00+00:00 [queued]>
+[2025-07-18T20:15:01.972+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-18T20:10:00+00:00 [queued]>
+[2025-07-18T20:15:01.973+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-18T20:15:01.990+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data> on 2025-07-18 20:10:00+00:00
+[2025-07-18T20:15:02.007+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ferry_portfolio_etl', 'extract_data', 'scheduled__2025-07-18T20:10:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/ferry_pipeline_dag.py', '--cfg-path', '/tmp/tmps4jn3hxp']
+[2025-07-18T20:15:02.010+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=204) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-18T20:15:02.012+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask extract_data
+[2025-07-18T20:15:02.012+0000] {standard_task_runner.py:63} INFO - Started process 206 to run task
+[2025-07-18T20:15:02.036+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-18T20:15:02.124+0000] {task_command.py:426} INFO - Running <TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-18T20:10:00+00:00 [running]> on host 41c60911f097
+[2025-07-18T20:15:02.290+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ashok' AIRFLOW_CTX_DAG_ID='ferry_portfolio_etl' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-18T20:10:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-18T20:10:00+00:00'
+[2025-07-18T20:15:02.297+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-18T20:15:02.319+0000] {extract_data.py:78} INFO - 🚀 Starting ferry data extraction pipeline...
+[2025-07-18T20:15:09.288+0000] {extract_data.py:80} INFO - 📊 Retrieved 100000 rows and 4 columns
+[2025-07-18T20:15:09.451+0000] {extract_data.py:19} INFO - ✅ Saved temporary file for DVC: artifacts/ferry_raw.csv
+[2025-07-18T20:15:09.452+0000] {extract_data.py:28} INFO - 🪣 Uploading file to S3: s3://ashok-ferry-data-bucket/raw_data/raw.csv
+[2025-07-18T20:15:09.712+0000] {extract_data.py:37} ERROR - ❌ Error uploading to S3: Unable to locate credentials
+[2025-07-18T20:15:09.713+0000] {extract_data.py:98} ERROR - 🚨 Failed in extract_data pipeline: CustomException.__init__() missing 1 required positional argument: 'error_details'
+[2025-07-18T20:15:09.721+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-18T20:15:09.722+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-18T20:15:09.735+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ferry_portfolio_etl, task_id=extract_data, run_id=scheduled__2025-07-18T20:10:00+00:00, execution_date=20250718T201000, start_date=20250718T201501, end_date=20250718T201509
+[2025-07-18T20:15:09.792+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-18T20:15:09.810+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

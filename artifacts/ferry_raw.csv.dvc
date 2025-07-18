@@ -1,0 +1,5 @@
+outs:
+- md5: 09158f65de4429235ac8f874af41f25d
+  size: 8224575
+  hash: md5
+  path: ferry_raw.csv
