@@ -1,0 +1,13 @@
+stages:
+  extract_data:
+    cmd: python src\ferry_portfolio_pipeline\scripts\extract_data.py
+    deps:
+    - src\ferry_portfolio_pipeline\scripts\extract_data.py
+    outs:
+    - artifacts\ferry_raw.csv
+  transform_data:
+    cmd: python src\ferry_portfolio_pipeline\scripts\transform_data.py
+    deps:
+    - src\ferry_portfolio_pipeline\scripts\transform_data.py
+    outs:
+    - artifacts\transformed_data.csv
