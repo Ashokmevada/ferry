@@ -9,5 +9,6 @@ stages:
     cmd: python src\ferry_portfolio_pipeline\scripts\transform_data.py
     deps:
     - src\ferry_portfolio_pipeline\scripts\transform_data.py
+    - artifacts\ferry_raw.csv
     outs:
     - artifacts\transformed_data.csv

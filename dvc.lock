@@ -15,6 +15,10 @@ stages:
   transform_data:
     cmd: python src\ferry_portfolio_pipeline\scripts\transform_data.py
     deps:
+    - path: artifacts\ferry_raw.csv
+      hash: md5
+      md5: 612c4e877a1bb05821e11596d2ab0ac0
+      size: 7886529
     - path: src\ferry_portfolio_pipeline\scripts\transform_data.py
       hash: md5
       md5: 7be5fb4ae6ea9782a33b3a8410d917af
