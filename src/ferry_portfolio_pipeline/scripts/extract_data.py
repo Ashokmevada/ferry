@@ -8,7 +8,7 @@ from ferry_portfolio_pipeline.exception import CustomException
 from ferry_portfolio_pipeline.config.settings import CONFIG
 
 # Temporary file path for DVC tracking
-TEMP_DVC_FILE = ".dvc-temp/ferry_raw.csv"
+TEMP_DVC_FILE = "artifacts/ferry_raw.csv"
 
 
 def save_temp_for_dvc(df: pd.DataFrame, file_path: str):
@@ -85,10 +85,10 @@ def main():
             key=CONFIG["s3"]["key"]         # e.g., "ferry_raw/ferry_raw.csv"
         )
 
-        # 3️⃣ Optional: delete temp file after tracking
-        if os.path.exists(TEMP_DVC_FILE):
-            os.remove(TEMP_DVC_FILE)
-            logger.info("🧹 Removed temporary local file after upload.")
+        # # 3️⃣ Optional: delete temp file after tracking
+        # if os.path.exists(TEMP_DVC_FILE):
+        #     os.remove(TEMP_DVC_FILE)
+        #     logger.info("🧹 Removed temporary local file after upload.")
 
     except Exception as e:
         logger.error(f"🚨 Failed in extract_data pipeline: {e}")

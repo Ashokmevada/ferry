@@ -25,6 +25,6 @@ prophet
 
 # for storing data in S3
 boto3
-
+dvc_s3
 # For Power BI SQL connector (ensure PostgreSQL driver is installed locally)
 # No need to install anything extra in code
