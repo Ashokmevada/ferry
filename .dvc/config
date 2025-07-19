@@ -2,4 +2,4 @@
     remote = s3remote
 ['remote "s3remote"']
     url = s3://ashok-ferry-data-bucket/ferry-dvc/
-    profile = default
+    

@@ -1,0 +1,23 @@
+[2025-07-19T02:55:01.529+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-07-19T02:55:01.573+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-19T02:50:00+00:00 [queued]>
+[2025-07-19T02:55:01.585+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-19T02:50:00+00:00 [queued]>
+[2025-07-19T02:55:01.586+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-07-19T02:55:01.605+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract_data> on 2025-07-19 02:50:00+00:00
+[2025-07-19T02:55:01.625+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=282) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-07-19T02:55:01.628+0000] {standard_task_runner.py:63} INFO - Started process 284 to run task
+[2025-07-19T02:55:01.625+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'ferry_portfolio_etl', 'extract_data', 'scheduled__2025-07-19T02:50:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/ferry_pipeline_dag.py', '--cfg-path', '/tmp/tmpl21498_e']
+[2025-07-19T02:55:01.629+0000] {standard_task_runner.py:91} INFO - Job 6: Subtask extract_data
+[2025-07-19T02:55:01.654+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-07-19T02:55:01.727+0000] {task_command.py:426} INFO - Running <TaskInstance: ferry_portfolio_etl.extract_data scheduled__2025-07-19T02:50:00+00:00 [running]> on host e6373d0838bd
+[2025-07-19T02:55:01.843+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ashok' AIRFLOW_CTX_DAG_ID='ferry_portfolio_etl' AIRFLOW_CTX_TASK_ID='extract_data' AIRFLOW_CTX_EXECUTION_DATE='2025-07-19T02:50:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-19T02:50:00+00:00'
+[2025-07-19T02:55:01.845+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-07-19T02:55:01.862+0000] {extract_data.py:78} INFO - 🚀 Starting ferry data extraction pipeline...
+[2025-07-19T02:55:20.017+0000] {extract_data.py:80} INFO - 📊 Retrieved 249958 rows and 4 columns
+[2025-07-19T02:55:20.023+0000] {extract_data.py:21} ERROR - ❌ Error saving local temp file: [Errno 13] Permission denied: 'artifacts/ferry_raw.csv'
+[2025-07-19T02:55:20.024+0000] {extract_data.py:98} ERROR - 🚨 Failed in extract_data pipeline: CustomException.__init__() missing 1 required positional argument: 'error_details'
+[2025-07-19T02:55:20.040+0000] {python.py:237} INFO - Done. Returned value was: None
+[2025-07-19T02:55:20.041+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-07-19T02:55:20.054+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=ferry_portfolio_etl, task_id=extract_data, run_id=scheduled__2025-07-19T02:50:00+00:00, execution_date=20250719T025000, start_date=20250719T025501, end_date=20250719T025520
+[2025-07-19T02:55:20.132+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-07-19T02:55:20.161+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-07-19T02:55:20.165+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

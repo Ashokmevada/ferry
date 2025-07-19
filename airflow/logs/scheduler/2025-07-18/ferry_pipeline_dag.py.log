@@ -5206,3 +5206,227 @@ ModuleNotFoundError: No module named 'ferry_portfolio_pipeline'
 [2025-07-18T23:39:38.659+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:39:38.659+0000] {dag.py:3096} INFO - Sync 1 DAGs
 [2025-07-18T23:39:38.715+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:39:38.714+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:35:00+00:00, run_after=2025-07-18 23:40:00+00:00
 [2025-07-18T23:39:38.763+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 4.977 seconds
+[2025-07-18T23:40:09.240+0000] {processor.py:161} INFO - Started process (PID=2436) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:09.246+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:40:09.281+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:09.278+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:13.699+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:13.855+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:13.853+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:40:13.909+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:13.909+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:40:13.960+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 4.828 seconds
+[2025-07-18T23:40:44.650+0000] {processor.py:161} INFO - Started process (PID=2446) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:44.654+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:40:44.676+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:44.674+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:46.129+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:40:46.179+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:46.179+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:40:46.207+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:40:46.206+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:40:46.239+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.661 seconds
+[2025-07-18T23:41:03.505+0000] {processor.py:161} INFO - Started process (PID=2452) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:03.509+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:41:03.515+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:03.514+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:04.540+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:04.573+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:04.572+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:41:04.597+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:04.597+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:41:04.629+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.138 seconds
+[2025-07-18T23:41:21.963+0000] {processor.py:161} INFO - Started process (PID=2458) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:21.968+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:41:21.983+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:21.981+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:23.678+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:41:23.739+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:23.738+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:41:23.765+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:41:23.765+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:41:23.800+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.879 seconds
+[2025-07-18T23:44:09.772+0000] {processor.py:161} INFO - Started process (PID=169) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:09.776+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:44:09.782+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:09.781+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:13.591+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:13.641+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:13.640+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:44:13.674+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:13.674+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:44:13.707+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 3.950 seconds
+[2025-07-18T23:44:44.154+0000] {processor.py:161} INFO - Started process (PID=175) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:44.157+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:44:44.173+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:44.172+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:46.646+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:44:47.229+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:47.229+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:44:47.276+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:44:47.275+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:40:00+00:00, run_after=2025-07-18 23:45:00+00:00
+[2025-07-18T23:44:47.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 3.194 seconds
+[2025-07-18T23:45:17.646+0000] {processor.py:161} INFO - Started process (PID=184) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:17.649+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:45:17.657+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:17.657+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:18.702+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:18.738+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:18.737+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:45:18.763+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:18.763+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:45:18.795+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.166 seconds
+[2025-07-18T23:45:49.109+0000] {processor.py:161} INFO - Started process (PID=198) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:49.111+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:45:49.115+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:49.114+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:50.345+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:45:50.396+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:50.396+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:45:50.449+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:45:50.449+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:45:50.492+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.394 seconds
+[2025-07-18T23:46:20.866+0000] {processor.py:161} INFO - Started process (PID=204) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:20.869+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:46:20.872+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:20.872+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:21.815+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:21.904+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:21.903+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:46:21.947+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:21.947+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:46:21.983+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.128 seconds
+[2025-07-18T23:46:52.151+0000] {processor.py:161} INFO - Started process (PID=210) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:52.154+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:46:52.157+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:52.156+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:52.921+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:46:53.177+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:53.177+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:46:53.200+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:46:53.200+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:46:53.222+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.082 seconds
+[2025-07-18T23:47:23.584+0000] {processor.py:161} INFO - Started process (PID=216) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:23.586+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:47:23.589+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:23.588+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:24.608+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:24.638+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:24.637+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:47:24.667+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:24.667+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:47:24.695+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.125 seconds
+[2025-07-18T23:47:54.848+0000] {processor.py:161} INFO - Started process (PID=222) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:54.850+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:47:54.853+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:54.853+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:55.935+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:47:55.979+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:55.978+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:47:56.006+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:47:56.006+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:47:56.038+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.206 seconds
+[2025-07-18T23:48:26.278+0000] {processor.py:161} INFO - Started process (PID=228) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:26.280+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:48:26.282+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:26.282+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:27.286+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:27.325+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:27.324+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:48:27.358+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:27.357+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:48:27.386+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.119 seconds
+[2025-07-18T23:48:57.589+0000] {processor.py:161} INFO - Started process (PID=234) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:57.590+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:48:57.595+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:57.594+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:58.586+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:48:58.622+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:58.621+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:48:58.647+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:48:58.647+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:48:58.679+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.106 seconds
+[2025-07-18T23:49:29.036+0000] {processor.py:161} INFO - Started process (PID=240) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:49:29.037+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:49:29.040+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:49:29.040+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:49:30.012+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:49:30.045+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:49:30.044+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:49:30.073+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:49:30.072+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:45:00+00:00, run_after=2025-07-18 23:50:00+00:00
+[2025-07-18T23:49:30.098+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.077 seconds
+[2025-07-18T23:50:00.301+0000] {processor.py:161} INFO - Started process (PID=246) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:00.304+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:50:00.308+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:00.307+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:01.339+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:01.698+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:01.697+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:50:01.726+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:01.725+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:50:01.763+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.474 seconds
+[2025-07-18T23:50:32.122+0000] {processor.py:161} INFO - Started process (PID=259) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:32.124+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:50:32.130+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:32.129+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:33.307+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:50:33.355+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:33.354+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:50:33.383+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:50:33.383+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:50:33.408+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.303 seconds
+[2025-07-18T23:51:03.716+0000] {processor.py:161} INFO - Started process (PID=265) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:03.719+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:51:03.722+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:03.722+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:04.663+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:04.694+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:04.694+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:51:04.724+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:04.723+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:51:04.753+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.047 seconds
+[2025-07-18T23:51:34.997+0000] {processor.py:161} INFO - Started process (PID=275) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:35.000+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:51:35.005+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:35.005+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:36.048+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:51:36.079+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:36.078+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:51:36.106+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:51:36.106+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:51:36.131+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.154 seconds
+[2025-07-18T23:52:06.255+0000] {processor.py:161} INFO - Started process (PID=281) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:06.257+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:52:06.259+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:06.259+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:07.121+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:07.153+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:07.153+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:52:07.179+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:07.179+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:52:07.205+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 0.961 seconds
+[2025-07-18T23:52:37.633+0000] {processor.py:161} INFO - Started process (PID=293) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:37.638+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:52:37.648+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:37.646+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:38.844+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:52:38.897+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:38.896+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:52:38.933+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:52:38.933+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:52:38.970+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.388 seconds
+[2025-07-18T23:53:09.287+0000] {processor.py:161} INFO - Started process (PID=300) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:09.291+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:53:09.299+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:09.298+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:09.950+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:10.165+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:10.164+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:53:10.188+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:10.188+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:53:10.212+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 0.936 seconds
+[2025-07-18T23:53:40.494+0000] {processor.py:161} INFO - Started process (PID=306) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:40.496+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:53:40.498+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:40.498+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:41.413+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:53:41.450+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:41.449+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:53:41.478+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:53:41.478+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:53:41.510+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.025 seconds
+[2025-07-18T23:54:11.779+0000] {processor.py:161} INFO - Started process (PID=315) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:11.781+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:54:11.785+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:11.784+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:12.880+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:12.905+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:12.905+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:54:12.926+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:12.926+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:54:12.955+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.186 seconds
+[2025-07-18T23:54:43.223+0000] {processor.py:161} INFO - Started process (PID=325) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:43.226+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:54:43.229+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:43.229+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:44.070+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:54:44.098+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:44.098+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:54:44.126+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:54:44.125+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:50:00+00:00, run_after=2025-07-18 23:55:00+00:00
+[2025-07-18T23:54:44.152+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 0.938 seconds
+[2025-07-18T23:55:14.420+0000] {processor.py:161} INFO - Started process (PID=334) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:14.423+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:55:14.427+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:14.426+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:18.825+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:18.937+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:18.936+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:55:19.010+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:19.009+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:55:19.080+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 4.672 seconds
+[2025-07-18T23:55:49.378+0000] {processor.py:161} INFO - Started process (PID=344) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:49.379+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:55:49.383+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:49.382+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:50.240+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:55:50.268+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:50.268+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:55:50.291+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:55:50.291+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:55:50.318+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 0.952 seconds
+[2025-07-18T23:56:21.055+0000] {processor.py:161} INFO - Started process (PID=350) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:21.069+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:56:21.120+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:21.112+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:24.276+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:24.371+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:24.371+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:56:24.398+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:24.398+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:56:24.428+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 3.502 seconds
+[2025-07-18T23:56:54.821+0000] {processor.py:161} INFO - Started process (PID=360) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:54.824+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:56:54.838+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:54.838+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:56.672+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:56:56.759+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:56.758+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:56:56.814+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:56:56.813+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:56:56.860+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 2.070 seconds
+[2025-07-18T23:57:27.041+0000] {processor.py:161} INFO - Started process (PID=366) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:57:27.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:57:27.048+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:57:27.047+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:57:28.034+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:57:28.071+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:57:28.071+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:57:28.098+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:57:28.098+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:57:28.124+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.108 seconds
+[2025-07-18T23:57:58.377+0000] {processor.py:161} INFO - Started process (PID=376) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:57:58.379+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:57:58.382+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:57:58.381+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:58:00.801+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:58:00.955+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:58:00.954+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:58:01.051+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:58:01.051+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:58:01.157+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 2.790 seconds
+[2025-07-18T23:58:31.577+0000] {processor.py:161} INFO - Started process (PID=382) to work on /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:58:31.581+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ferry_pipeline_dag.py for tasks to queue
+[2025-07-18T23:58:31.598+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:58:31.595+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:58:33.045+0000] {processor.py:840} INFO - DAG(s) 'ferry_portfolio_etl' retrieved from /opt/airflow/dags/ferry_pipeline_dag.py
+[2025-07-18T23:58:33.080+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:58:33.080+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-07-18T23:58:33.106+0000] {logging_mixin.py:188} INFO - [2025-07-18T23:58:33.106+0000] {dag.py:3954} INFO - Setting next_dagrun for ferry_portfolio_etl to 2025-07-18 23:55:00+00:00, run_after=2025-07-19 00:00:00+00:00
+[2025-07-18T23:58:33.128+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ferry_pipeline_dag.py took 1.599 seconds

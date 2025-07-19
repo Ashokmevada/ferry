@@ -1,5 +1,5 @@
 setuptools
--e .
+
 
 # Core
 pandas
@@ -10,7 +10,7 @@ psycopg2-binary
 PyYAML
 
 # Airflow (use only if you're running locally; pin versions to avoid conflicts)
-apache-airflow==2.9.1
+# apache-airflow==2.9.1
 
 # Logging & Dev
 python-dotenv
