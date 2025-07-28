@@ -2,3 +2,4 @@
 /.env
 /logs/*
 /src/ferry_portfolio_pipeline/config/settings.py
+environment.env
