@@ -67,7 +67,7 @@ def run_dvc_repro():
 def run_dvc_push():
     log.info("Attempting to run: dvc push")
     try:
-        subprocess.run(
+        result =subprocess.run(
             ["dvc", "push"],
             check=True,
             cwd="/opt/airflow",

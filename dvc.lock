@@ -19,14 +19,27 @@ stages:
       hash: md5
       md5: d5b2e010755e7cef13dc867fa4fd00d3
       size: 7975193
-      isexec: true
     - path: src/ferry_portfolio_pipeline/scripts/transform_data.py
       hash: md5
-      md5: a25b7e9a0a860894547b41395dc5bf33
-      size: 3040
-      isexec: true
+      md5: c61bbbca6bb1e900514424db41dfa81e
+      size: 5026
     outs:
     - path: artifacts/transformed_data.csv
       hash: md5
-      md5: 7eb422a40056f25306e29355a3aff821
-      size: 4507673
+      md5: 6d75f0c73440e4da5168ad908a2fa536
+      size: 7538832
+  model_training:
+    cmd: python src/ferry_portfolio_pipeline/scripts/main.py
+    deps:
+    - path: artifacts/test.csv
+      hash: md5
+      md5: b19a632b4be122268525d6ec9abd2fc2
+      size: 356
+    - path: artifacts/train.csv
+      hash: md5
+      md5: dc6ef3a5969e1912340dd126973e238d
+      size: 666
+    - path: src/ferry_portfolio_pipeline/scripts/main.py
+      hash: md5
+      md5: 07a4f48ce31117f3c12a45115a93032d
+      size: 2004

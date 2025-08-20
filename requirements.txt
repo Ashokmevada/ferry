@@ -28,3 +28,10 @@ boto3
 dvc_s3
 # For Power BI SQL connector (ensure PostgreSQL driver is installed locally)
 # No need to install anything extra in code
+
+# MLflow for model tracking
+mlflow
+
+# for making dashboards
+streamlit
+streamlit-autorefresh

@@ -7,3 +7,10 @@ stages:
     - artifacts/ferry_raw.csv
     outs:
     - artifacts/transformed_data.csv
+  
+  model_training:
+    cmd: python src/ferry_portfolio_pipeline/scripts/main.py
+    deps:
+    - src/ferry_portfolio_pipeline/scripts/main.py
+    - artifacts/train.csv
+    - artifacts/test.csv
