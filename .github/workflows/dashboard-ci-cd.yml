@@ -62,6 +62,6 @@ jobs:
         run: |
           aws ecs update-service \
             --cluster ferry_cluster_1 \
-            --service ferry_dashboard_task_definition-service-kvcjiw8r  \
+            --service ferry_dashboard_task_definition-service  \
             --force-new-deployment \
             --region $AWS_REGION
