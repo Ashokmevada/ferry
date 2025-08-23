@@ -11,6 +11,7 @@ env:
   ECR_REPOSITORY: ferry-airflow
   IMAGE_TAG: ${{ github.sha }}
   CLUSTER_NAME: ferry-airflow-cluster
+  EXECUTION_ROLE_ARN: ${{ secrets.EXECUTION_ROLE_ARN }} # add your ECS Task Execution Role ARN as a GitHub secret
 
 jobs:
   deploy-airflow:
@@ -46,6 +47,7 @@ jobs:
             --network-mode awsvpc \
             --cpu "512" \
             --memory "1024" \
+            --execution-role-arn $EXECUTION_ROLE_ARN \
             --container-definitions "[
               {
                 \"name\": \"airflow-webserver\",
@@ -65,6 +67,7 @@ jobs:
             --network-mode awsvpc \
             --cpu "512" \
             --memory "1024" \
+            --execution-role-arn $EXECUTION_ROLE_ARN \
             --container-definitions "[
               {
                 \"name\": \"airflow-scheduler\",
