@@ -1,0 +1,86 @@
+name: Airflow CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+  ECR_REPOSITORY: ferry-airflow
+  IMAGE_TAG: ${{ github.sha }}
+  CLUSTER_NAME: ferry-airflow-cluster
+
+jobs:
+  deploy-airflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Build Docker Image
+        run: |
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG .
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Push Docker Image to ECR
+        run: |
+          aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+
+      - name: Register new Task Definition - Webserver
+        run: |
+          aws ecs register-task-definition \
+            --family airflow-webserver \
+            --container-definitions "[
+              {
+                \"name\": \"airflow-webserver\",
+                \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
+                \"essential\": true
+              }
+            ]"
+
+      - name: Register new Task Definition - Scheduler
+        run: |
+          aws ecs register-task-definition \
+            --family airflow-scheduler \
+            --container-definitions "[
+              {
+                \"name\": \"airflow-scheduler\",
+                \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
+                \"essential\": true
+              }
+            ]"
+
+      - name: Stop existing Webserver & Scheduler Tasks
+        run: |
+          WEB_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-webserver --query 'taskArns' --output text)
+          SCHED_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-scheduler --query 'taskArns' --output text)
+          for t in $WEB_TASKS $SCHED_TASKS; do
+            aws ecs stop-task --cluster $CLUSTER_NAME --task $t
+          done
+
+      - name: Run Webserver task
+        run: |
+          aws ecs run-task \
+            --cluster $CLUSTER_NAME \
+            --launch-type FARGATE \
+            --task-definition airflow-webserver \
+            --overrides '{"containerOverrides":[{"name":"airflow-webserver","command":["webserver"]}]}'
+
+      - name: Run Scheduler task
+        run: |
+          aws ecs run-task \
+            --cluster $CLUSTER_NAME \
+            --launch-type FARGATE \
+            --task-definition airflow-scheduler \
+            --overrides '{"containerOverrides":[{"name":"airflow-scheduler","command":["scheduler"]}]}'

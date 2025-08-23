@@ -61,7 +61,7 @@ jobs:
       - name: Update ECS Service
         run: |
           aws ecs update-service \
-            --cluster ferry_cluster_1 \
-            --service ferry_dashboard_task_definition-service  \
+            --cluster ferry-airflow-cluster\
+            --service ferry_dashboard_service  \
             --force-new-deployment \
             --region $AWS_REGION
