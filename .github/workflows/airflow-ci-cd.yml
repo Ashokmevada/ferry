@@ -12,7 +12,7 @@ env:
   IMAGE_TAG: ${{ github.sha }}
   CLUSTER_NAME: ferry-airflow-cluster
   SUBNETS: "subnet-002a77caba1f65adb,subnet-00447eb04f282300b,subnet-0a083aed2467321bc,subnet-02c417661a1c5e7ae,subnet-0b11aad27c03c075f,subnet-0777a71f526b10991"
-  SECURITY_GROUPS: "sg-0b1c2d3e4f567890a" # replace with your airflow-sg ID
+  SECURITY_GROUPS: "sg-015443daf2f73acce" # replace with your airflow-sg ID
 
 jobs:
   deploy-airflow:
