@@ -7,11 +7,12 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+  AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REPOSITORY: ferry-airflow
   IMAGE_TAG: ${{ github.sha }}
   CLUSTER_NAME: ferry-airflow-cluster
-  EXECUTION_ROLE_ARN: ${{ secrets.EXECUTION_ROLE_ARN }} # add your ECS Task Execution Role ARN as a GitHub secret
+  SUBNETS: "subnet-002a77caba1f65adb,subnet-00447eb04f282300b,subnet-0a083aed2467321bc,subnet-02c417661a1c5e7ae,subnet-0b11aad27c03c075f,subnet-0777a71f526b10991"
+  SECURITY_GROUPS: "airflow-sg"
 
 jobs:
   deploy-airflow:
@@ -38,68 +39,59 @@ jobs:
           aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.$AWS_REGION.amazonaws.com
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
 
-      - name: Register new Task Definition - Webserver
+      - name: Register Task Definition - Webserver
         run: |
           aws ecs register-task-definition \
-            --region $AWS_REGION \
             --family airflow-webserver \
-            --requires-compatibilities FARGATE \
             --network-mode awsvpc \
-            --cpu "512" \
-            --memory "1024" \
-            --execution-role-arn $EXECUTION_ROLE_ARN \
-            --container-definitions "[
-              {
-                \"name\": \"airflow-webserver\",
-                \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
-                \"essential\": true,
-                \"memory\": 1024,
-                \"cpu\": 512
-              }
-            ]"
+            --requires-compatibilities FARGATE \
+            --cpu "1024" \
+            --memory "2048" \
+            --execution-role-arn ${{ secrets.AIRFLOW_EXEC_ROLE_ARN }} \
+            --container-definitions "[{
+              \"name\": \"airflow-webserver\",
+              \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
+              \"essential\": true,
+              \"portMappings\":[{\"containerPort\":8080,\"protocol\":\"tcp\"}]
+            }]"
 
-      - name: Register new Task Definition - Scheduler
+      - name: Register Task Definition - Scheduler
         run: |
           aws ecs register-task-definition \
-            --region $AWS_REGION \
             --family airflow-scheduler \
-            --requires-compatibilities FARGATE \
             --network-mode awsvpc \
-            --cpu "512" \
-            --memory "1024" \
-            --execution-role-arn $EXECUTION_ROLE_ARN \
-            --container-definitions "[
-              {
-                \"name\": \"airflow-scheduler\",
-                \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
-                \"essential\": true,
-                \"memory\": 1024,
-                \"cpu\": 512
-              }
-            ]"
+            --requires-compatibilities FARGATE \
+            --cpu "1024" \
+            --memory "2048" \
+            --execution-role-arn ${{ secrets.AIRFLOW_EXEC_ROLE_ARN }} \
+            --container-definitions "[{
+              \"name\": \"airflow-scheduler\",
+              \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
+              \"essential\": true
+            }]"
 
       - name: Stop existing Webserver & Scheduler Tasks
         run: |
-          WEB_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-webserver --region $AWS_REGION --query 'taskArns' --output text)
-          SCHED_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-scheduler --region $AWS_REGION --query 'taskArns' --output text)
+          WEB_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-webserver --query 'taskArns' --output text)
+          SCHED_TASKS=$(aws ecs list-tasks --cluster $CLUSTER_NAME --family airflow-scheduler --query 'taskArns' --output text)
           for t in $WEB_TASKS $SCHED_TASKS; do
-            aws ecs stop-task --cluster $CLUSTER_NAME --task $t --region $AWS_REGION
+            aws ecs stop-task --cluster $CLUSTER_NAME --task $t
           done
 
-      - name: Run Webserver task
+      - name: Run Webserver Task
         run: |
           aws ecs run-task \
             --cluster $CLUSTER_NAME \
             --launch-type FARGATE \
             --task-definition airflow-webserver \
-            --region $AWS_REGION \
-            --overrides '{"containerOverrides":[{"name":"airflow-webserver","command":["webserver"]}]}'
+            --overrides '{"containerOverrides":[{"name":"airflow-webserver","command":["webserver"]}]}' \
+            --network-configuration "awsvpcConfiguration={subnets=[${SUBNETS}],securityGroups=[${SECURITY_GROUPS}],assignPublicIp=ENABLED}"
 
-      - name: Run Scheduler task
+      - name: Run Scheduler Task
         run: |
           aws ecs run-task \
             --cluster $CLUSTER_NAME \
             --launch-type FARGATE \
             --task-definition airflow-scheduler \
-            --region $AWS_REGION \
-            --overrides '{"containerOverrides":[{"name":"airflow-scheduler","command":["scheduler"]}]}'
+            --overrides '{"containerOverrides":[{"name":"airflow-scheduler","command":["scheduler"]}]}' \
+            --network-configuration "awsvpcConfiguration={subnets=[${SUBNETS}],securityGroups=[${SECURITY_GROUPS}],assignPublicIp=ENABLED}"
