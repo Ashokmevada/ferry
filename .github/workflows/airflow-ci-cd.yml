@@ -40,8 +40,9 @@ jobs:
           docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
 
       - name: Register Task Definition - Webserver
+        id: register-webserver-task-definition
         run: |
-          aws ecs register-task-definition \
+          TASK_DEFINITION=$(aws ecs register-task-definition \
             --family airflow-webserver \
             --network-mode awsvpc \
             --requires-compatibilities FARGATE \
@@ -52,12 +53,15 @@ jobs:
               \"name\": \"airflow-webserver\",
               \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
               \"essential\": true,
-              \"portMappings\":[{\"containerPort\":8080,\"protocol\":\"tcp\"}]
-            }]"
-
+              \"portMappings\":[{\"containerPort\":8080,\"protocol\":\"tcp\"}],
+              \"command\":[\"webserver\"]
+            }]" --query 'taskDefinition.taskDefinitionArn' --output text)
+          echo "task_definition_arn=$TASK_DEFINITION" >> $GITHUB_OUTPUT
+      
       - name: Register Task Definition - Scheduler
+        id: register-scheduler-task-definition
         run: |
-          aws ecs register-task-definition \
+          TASK_DEFINITION=$(aws ecs register-task-definition \
             --family airflow-scheduler \
             --network-mode awsvpc \
             --requires-compatibilities FARGATE \
@@ -67,25 +71,23 @@ jobs:
             --container-definitions "[{
               \"name\": \"airflow-scheduler\",
               \"image\": \"${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG\",
-              \"essential\": true
-            }]"
+              \"essential\": true,
+              \"command\":[\"scheduler\"]
+            }]" --query 'taskDefinition.taskDefinitionArn' --output text)
+          echo "task_definition_arn=$TASK_DEFINITION" >> $GITHUB_OUTPUT
 
       - name: Update Webserver Service
         run: |
           aws ecs update-service \
             --cluster $CLUSTER_NAME \
             --service airflow-webserver-service \
-            --task-definition airflow-webserver \
-            --force-new-deployment \
-            --overrides '{"containerOverrides":[{"name":"airflow-webserver","command":["webserver"]}]}' \
-            --network-configuration "awsvpcConfiguration={subnets=[${SUBNETS}],securityGroups=[${SECURITY_GROUPS}],assignPublicIp=ENABLED}"
+            --task-definition ${{ steps.register-webserver-task-definition.outputs.task_definition_arn }} \
+            --force-new-deployment
 
       - name: Update Scheduler Service
         run: |
           aws ecs update-service \
             --cluster $CLUSTER_NAME \
             --service airflow-scheduler-service \
-            --task-definition airflow-scheduler \
-            --force-new-deployment \
-            --overrides '{"containerOverrides":[{"name":"airflow-scheduler","command":["scheduler"]}]}' \
-            --network-configuration "awsvpcConfiguration={subnets=[${SUBNETS}],securityGroups=[${SECURITY_GROUPS}],assignPublicIp=ENABLED}"
+            --task-definition ${{ steps.register-scheduler-task-definition.outputs.task_definition_arn }} \
+            --force-new-deployment
