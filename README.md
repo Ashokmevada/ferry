@@ -56,7 +56,7 @@ The dataset consists of:
 - Python (pandas, scikit-learn, statsmodels, Prophet)
 - Apache Airflow for pipeline orchestration
 - Cloud SQL database (e.g., Supabase or AWS RDS)
-- Power BI for dashboarding
+- Streamlit or Power BI for dashboarding
 - GitHub Actions for CI/CD
 
 ## Expected Outcomes
