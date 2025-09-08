@@ -1,103 +1,90 @@
-# Toronto Island Park Ferry Ticket Sales and Redemption Forecasting
+# Toronto Island Ferry Sales & Revenue Forecasting  
 
-## Project Overview
-
-This project focuses on forecasting ferry ticket sales and redemptions for Toronto Island Park ferries using near real-time data collected at 15-minute intervals. Accurate forecasting of ticket sales and redemption volumes is critical to optimizing ferry operations, improving staff scheduling, and enhancing passenger experience.
-
-## Business Problem
-
-Toronto Island Park ferries face fluctuating passenger demand throughout the day. Without reliable forecasts of ticket sales and redemption counts, ferry operators struggle to:
-
-- Efficiently allocate staff at ticket counters and boarding gates
-- Schedule the appropriate number of ferry trips and vessel capacity
-- Minimize passenger wait times and avoid overcrowding
-
-## Importance of Forecasting
-
-Forecasting ferry ticket sales and redemptions enables proactive operational planning instead of reactive decision-making. This leads to better alignment of ferry service capacity with passenger demand, improved operational efficiency, and a more pleasant experience for passengers.
-
-## Project Goals
-
-- Develop accurate time-series forecasting models for ticket sales and redemptions at 15-minute intervals
-- Provide actionable insights for staffing and ferry scheduling based on forecasted demand
-- Automate data ingestion, transformation, and forecasting workflows for real-time updates
-- Create interactive dashboards that visualize forecasts and historical data for operational decision-makers
-
-## Data Description
-
-The dataset consists of:
-
-- Timestamped records at 15-minute intervals
-- Number of tickets sold
-- Number of tickets redeemed (used to board the ferry)
-
-## Methodology
-
-1. **Data Exploration and Preprocessing:**  
-   Analyze data trends, seasonality, and clean the dataset for modeling.
-
-2. **Feature Engineering:**  
-   Include time-based features (hour of day, day of week), holidays, and other relevant factors.
-
-3. **Model Development:**  
-   Experiment with classical and machine learning time series models (ARIMA, Prophet, LSTM, etc.) to forecast ticket sales and redemptions.
-
-4. **Evaluation:**  
-   Assess model accuracy using metrics such as RMSE and MAE.
-
-5. **Automation:**  
-   Use Apache Airflow to automate data pipelines and forecasting workflows.
-
-6. **Visualization:**  
-   Build Power BI dashboards that refresh automatically to present forecasts and KPIs.
-
-## Tools and Technologies
-
-- Python (pandas, scikit-learn, statsmodels, Prophet)
-- Apache Airflow for pipeline orchestration
-- Cloud SQL database (e.g., Supabase or AWS RDS)
-- Streamlit or Power BI for dashboarding
-- GitHub Actions for CI/CD
-
-## Expected Outcomes
-
-- Reliable forecasts of ferry ticket sales and redemptions at granular time intervals  
-- Optimized staffing and ferry scheduling recommendations  
-- Reduced wait times and improved passenger flow management  
-- A fully automated, scalable forecasting pipeline with live dashboard updates
+## 📌 Project Overview  
+This project focuses on forecasting **monthly ferry ticket sales and revenue** for Toronto Island ferries using historical data and advanced time-series models. Accurate forecasting of demand and revenue supports city planners, ferry operators, and tourism authorities in making strategic, data-driven decisions.  
 
 ---
 
-## Getting Started
+## 🚢 Business Problem  
+Toronto Island ferries experience strong seasonal fluctuations in passenger demand. Without reliable forecasts, operators and city officials face challenges in:  
 
-1. Clone the repository  
-2. Install dependencies via `pip install -r requirements.txt` or `pip install -e .`  
-3. Configure database and Airflow connections  
-4. Run data extraction, transformation, and forecasting scripts  
-5. Access the Power BI dashboard connected to your cloud database
-
----
-
-## Contact
-
-For questions or feedback, please contact Ashok Mevada at ashokmevada18@gmail.com
+- Allocating resources (staff, vessels, maintenance) efficiently  
+- Optimizing ticket pricing and revenue strategies  
+- Planning for tourism demand and visitor inflows  
+- Supporting sustainability goals by reducing unnecessary trips  
 
 ---
 
-*This project aims to contribute to sustainable and efficient ferry operations at Toronto Island Park through data-driven forecasting and analytics.*
+## 📈 Importance of Forecasting  
+Forecasting sales and revenue enables proactive planning instead of reactive responses. It ensures better capacity management, sustainable transportation policies, and optimized financial outcomes.  
 
-📌 Why Install Airflow with Constraints?
-To ensure a stable and compatible setup, we install Apache Airflow using an officially maintained constraints file. This guarantees that all dependencies are locked to versions that are tested and supported with the selected Airflow version.
+---
 
+## 🎯 Project Goals  
+- Build accurate time-series forecasting models for ferry sales and revenue  
+- Identify seasonal and trend patterns to guide decision-making  
+- Automate data pipelines and model training for scalability  
+- Provide interactive dashboards for real-time monitoring and insights  
 
-AIRFLOW_VERSION=2.8.2
-PYTHON_VERSION="$(python --version | cut -d ' ' -f 2 | cut -d '.' -f 1-2)"
-CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+---
 
-pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
-✅ Benefits:
-Avoids version conflicts
+## 📊 Data Description  
+- **Source:** Toronto government open data portal  
+- **Granularity:** Monthly ticket sales and revenue data  
+- **Storage:** Raw and transformed data stored in AWS S3 and RDS  
 
-Ensures reliable DAG execution
+---
 
-Reproducible and production-ready installation.
+## ⚙️ Methodology  
+1. **Data Processing:** Cleaning and transformation with Python  
+2. **Forecasting:** Prophet model with hyperparameter tuning (cross-validation, RMSE evaluation)  
+3. **Infrastructure:** Automated workflows with Apache Airflow and DVC, containerized with Docker  
+4. **Deployment:** Deployed on AWS ECS/ECR with GitHub Actions CI/CD  
+5. **Visualization:** Streamlit dashboard with auto-refresh for continuous monitoring  
+
+---
+
+## 🛠️ Tools & Technologies  
+- **Python** (pandas, Prophet, scikit-learn)  
+- **Cloud:** AWS S3, RDS, ECS, ECR  
+- **Workflow & Versioning:** Apache Airflow, DVC  
+- **Containerization & CI/CD:** Docker, GitHub Actions  
+- **Visualization:** Streamlit  
+
+---
+
+## ✅ Expected Outcomes  
+- Reliable monthly forecasts of ferry sales and revenue  
+- Seasonal demand insights for tourism and operations planning  
+- Optimized scheduling, staffing, and pricing recommendations  
+- Automated, scalable forecasting pipeline with live dashboards  
+
+---
+
+## 🚀 Getting Started  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/yourusername/ferry-forecasting.git
+   cd ferry-forecasting
+   
+2.Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Configure AWS and Airflow connections
+
+4. Run data extraction, transformation, and forecasting scripts
+
+5. Access the Streamlit dashboard for forecasts and KPIs
+
+📬 Contact
+
+For questions or feedback, please contact:
+
+Ashok Mevada
+📧 Email: ashokmevada18@gmail.com
+
+🌐 Portfolio: ashokmevada.com
